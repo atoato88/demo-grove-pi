@@ -250,9 +250,11 @@ services:
     environment:
       <<: *common-variables
       edgex_service: http://edgex-app-service-configurable-rules:48100
-      edgex_profile: rules-engine
+      edgex_profile: sample
       Service_Host: edgex-app-service-configurable-rules
       MessageBus_SubscribeHost_Host: edgex-core-data
+    volumes:
+      - ./res:/res
     depends_on:
       - consul
       - logging
